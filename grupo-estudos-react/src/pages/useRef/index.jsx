@@ -1,19 +1,26 @@
 import { useRef } from 'react';
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../components/navBar';
 
-export function ExemploUseRef() {
-  const inputRef = useRef(null);
+export const ExemplouseRef = () => {
+  const inputRef = useRef(5);
 
   const focoInput = () => {
     inputRef.current.focus();
-  };
+    inputRef.current.value = '18';
+    console.log(inputRef.current.value)
+  }
+
+  const onValue = (event) => {
+    console.log('aasdas', event);
+    inputRef.current.value = event.target.value
+  }
 
   return (
     <div>
       <NavBar />
-      <h1>ExemploUseRef</h1>
-      <input ref={inputRef} type="text" />
-      <button onClick={focoInput}>Focar no Input</button>
+      <h1>ExemplouseRef</h1>
+      <input ref={inputRef} type='text' value={inputRef.current.value} onChange={(event) =>  onValue(event)} />
+      <button onClick={focoInput}>Focar</button>
     </div>
   );
-}
+};

@@ -1,45 +1,36 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-import { ExemploUseCallBack } from '../pages/useCallback'
-import { ExemploUseContext } from '../pages/useContext'
-import { ExemploUseEffect } from '../pages/useEffect'
-import { ExemploUseMemo } from '../pages/useMemo'
-import { ContadorUseReducer } from '../pages/useReducer'
-import { ExemploUseRef } from '../pages/useRef'
-import ExemploUseState from '../pages/useState'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { TemaAtual } from '../pages/theme';
+import { ExemploUseEffect } from '../pages/useEffect';
+import { ExemploUseCallback } from '../pages/useCallback';
+import { ExemploUseMemo } from '../pages/useMemo';
+import { ExemploUseReducer } from '../pages/useReducer';
+import { ExemplouseRef } from '../pages/useRef';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <ExemploUseCallBack />
+    path: '/',
+    element: <TemaAtual />
   },
   {
-    path: "/ExemploUseContext",
-    element: <ExemploUseContext />,
+    path: '/useEffect',
+    element: <ExemploUseEffect />
   },
   {
-    path: "/ExemploUseEffect",
-    element: <ExemploUseEffect />,
+    path: '/useCallback',
+    element: <ExemploUseCallback />
   },
   {
-    path: "/ExemploUseMemo",
-    element: <ExemploUseMemo />,
+    path: '/useMemo',
+    element: <ExemploUseMemo />
   },
   {
-    path: "/ContadorUseReducer",
-    element: <ContadorUseReducer />,
+    path: '/useReducer',
+    element: <ExemploUseReducer />
   },
   {
-    path: "/ExemploUseRef",
-    element: <ExemploUseRef />,
-  },
-  {
-    path: "/ExemploUseState",
-    element: <ExemploUseState />,
-  },
+    path: '/ExemplouseRef',
+    element: <ExemplouseRef />
+  }
 ]);
 
 export const Routes = () => {

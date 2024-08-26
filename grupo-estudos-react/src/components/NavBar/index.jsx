@@ -5,39 +5,34 @@ export const NavBar = () => {
     <ul>
       <li>
         <Link to="/">
-          ExemploUseCallBack
-        </Link>
-      </li>
-      <li>
-        <Link to="/ExemploUseContext">
           ExemploUseContext
         </Link>
       </li>
       <li>
-        <Link to="/ExemploUseEffect">
+        <Link to="/useEffect">
           ExemploUseEffect
         </Link>
       </li>
       <li>
-        <Link to="/ExemploUseMemo">
+        <Link to="/useCallback">
+          ExemploUseCallback
+        </Link>
+      </li>
+      <li>
+        <Link to="/useMemo">
           ExemploUseMemo
         </Link>
       </li>
       <li>
-        <Link to="/ContadorUseReducer">
-          ContadorUseReducer
+        <Link to="/useReducer">
+          ExemploUseReducer
         </Link>
       </li>
       <li>
-        <Link to="/ExemploUseRef">
-          ExemploUseRef
-        </Link>
-      </li>
-      <li>
-        <Link to="/ExemploUseState">
-          ExemploUseState
+        <Link to="/ExemplouseRef">
+          ExemplouseRef
         </Link>
       </li>
     </ul>
-  );
-};
+  )
+}

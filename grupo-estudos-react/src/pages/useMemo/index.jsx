@@ -1,20 +1,24 @@
-import { useState, useMemo } from 'react';
-import { NavBar } from '../../components/NavBar';
+import React, { useState, useMemo } from 'react';
+import { NavBar } from '../../components/navBar';
 
-export function ExemploUseMemo() {
-  const [contagem, setContagem] = useState(0);
+export const TemaContext = React.createContext();
+
+export const ExemploUseMemo = () => {
+  const [contador, setContador] = useState(0);
 
   const valorMemorizado = useMemo(() => {
-    return contagem * 2;
-  }, [contagem]);
+    return contador * 2;
+  }, [contador]);
 
   return (
     <div>
       <NavBar />
       <h1>ExemploUseMemo</h1>
-      <p>Contagem: {contagem}</p>
+      <p>Contagem: {contador}</p>
       <p>Valor memorizado: {valorMemorizado}</p>
-      <button onClick={() => setContagem(contagem + 1)}>Incrementar</button>
+      <button onClick={() => setContador(contador + 1)}>
+        Incrementar
+      </button>
     </div>
   );
-}
+};

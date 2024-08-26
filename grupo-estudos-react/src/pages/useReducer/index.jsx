@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../components/navBar';
 
 const inicial = { contagem: 0 };
 
@@ -10,20 +10,25 @@ function reducer(state, action) {
     case 'decrementar':
       return { contagem: state.contagem - 1 };
     default:
-      throw new Error();
+      throw new Error('Invalid action type');
   }
 }
 
-export function ContadorUseReducer() {
+
+export const ExemploUseReducer = () => {
   const [state, dispatch] = useReducer(reducer, inicial);
 
   return (
     <div>
       <NavBar />
-      <h1>ContadorUseReducer</h1>
+      <h1>ExemploUseReducer</h1>
       <p>Contagem: {state.contagem}</p>
-      <button onClick={() => dispatch({ type: 'incrementar' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrementar' })}>-</button>
+      <button onClick={() => dispatch({ type: 'incrementar' })}>
+        +
+      </button>
+      <button onClick={() => dispatch({ type: 'decrementar' })}>
+        -
+      </button>
     </div>
   );
-}
+};

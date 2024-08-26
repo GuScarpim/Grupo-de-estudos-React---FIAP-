@@ -1,15 +1,20 @@
-import React, { useContext } from 'react';
-import { NavBar } from '../../components/NavBar';
+import React, { useState } from 'react';
 
-const TemaContext = React.createContext('claro');
+export const TemaContext = React.createContext();
 
-export const ExemploUseContext = () => {
-  const tema = useContext(TemaContext);
+// eslint-disable-next-line react/prop-types
+export const TemaProvider = ({ children }) => {
+  const [tema, setTema] = useState('claro');
+
+  const alternarTema = () => {
+    setTema((temaAtual) => (temaAtual === 'claro' ? 'escuro' : 'claro'));
+  }
+
   return (
-    <>
-      <NavBar />
-      <h1>ExemploUseContext</h1>
-      <div>O tema atual é {tema}</div>
-    </>
-  );
-};
+    <TemaContext.Provider value={{ tema, alternarTema }}>
+      <div style={{ background: tema === 'claro' ? '#f3f3' : '#000' }}>
+        {children}
+      </div>
+    </TemaContext.Provider>
+  )
+}
